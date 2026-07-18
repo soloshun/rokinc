@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  /* ROKinc brand — deep plum drawn from the logo, on warm white */
+  --color-rok-50: #fdf4fa;
+  --color-rok-100: #fae8f4;
+  --color-rok-200: #f5d0e9;
+  --color-rok-300: #ecaad6;
+  --color-rok-400: #de77bb;
+  --color-rok-500: #cb4e9f;
+  --color-rok-600: #b23483;
+  --color-rok-700: #96266b;
+  --color-rok-800: #7c2159;
+  --color-rok-900: #611a46;
+  --color-rok-950: #3f0e2d;
+
+  --color-ink: #241722;
+  --color-ink-soft: #5d4a58;
+  --color-paper: #fffdfd;
+  --color-paper-warm: #faf5f8;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
+}
+
+::selection {
+  background: var(--color-rok-200);
+  color: var(--color-rok-950);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Soft grain so large color fields feel printed, not digital */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
